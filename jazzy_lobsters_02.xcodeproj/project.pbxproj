@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		693D5E0E20298E1300D50FC2 /* jazzy_lobsters_02View.h in Headers */ = {isa = PBXBuildFile; fileRef = 693D5E0D20298E1300D50FC2 /* jazzy_lobsters_02View.h */; };
 		693D5E1020298E1300D50FC2 /* jazzy_lobsters_02View.m in Sources */ = {isa = PBXBuildFile; fileRef = 693D5E0F20298E1300D50FC2 /* jazzy_lobsters_02View.m */; };
-		693D5E1920298FB300D50FC2 /* Manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 693D5E1720298FB300D50FC2 /* Manager.h */; };
-		693D5E1A20298FB300D50FC2 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 693D5E1820298FB300D50FC2 /* Manager.m */; };
+		6994EA36202AD81700416FB3 /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6994EA32202AD81700416FB3 /* BaseItem.m */; };
+		6994EA37202AD81700416FB3 /* NSColor+Interpolate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6994EA33202AD81700416FB3 /* NSColor+Interpolate.m */; };
+		6994EA38202AD81700416FB3 /* NSColor+Interpolate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6994EA34202AD81700416FB3 /* NSColor+Interpolate.h */; };
+		6994EA39202AD81700416FB3 /* BaseItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6994EA35202AD81700416FB3 /* BaseItem.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +20,10 @@
 		693D5E0D20298E1300D50FC2 /* jazzy_lobsters_02View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jazzy_lobsters_02View.h; sourceTree = "<group>"; };
 		693D5E0F20298E1300D50FC2 /* jazzy_lobsters_02View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jazzy_lobsters_02View.m; sourceTree = "<group>"; };
 		693D5E1120298E1300D50FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		693D5E1720298FB300D50FC2 /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
-		693D5E1820298FB300D50FC2 /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		6994EA32202AD81700416FB3 /* BaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseItem.m; sourceTree = "<group>"; };
+		6994EA33202AD81700416FB3 /* NSColor+Interpolate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Interpolate.m"; sourceTree = "<group>"; };
+		6994EA34202AD81700416FB3 /* NSColor+Interpolate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Interpolate.h"; sourceTree = "<group>"; };
+		6994EA35202AD81700416FB3 /* BaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +56,13 @@
 		693D5E0C20298E1300D50FC2 /* jazzy_lobsters_02 */ = {
 			isa = PBXGroup;
 			children = (
+				6994EA35202AD81700416FB3 /* BaseItem.h */,
+				6994EA32202AD81700416FB3 /* BaseItem.m */,
+				6994EA34202AD81700416FB3 /* NSColor+Interpolate.h */,
+				6994EA33202AD81700416FB3 /* NSColor+Interpolate.m */,
 				693D5E0D20298E1300D50FC2 /* jazzy_lobsters_02View.h */,
 				693D5E0F20298E1300D50FC2 /* jazzy_lobsters_02View.m */,
 				693D5E1120298E1300D50FC2 /* Info.plist */,
-				693D5E1720298FB300D50FC2 /* Manager.h */,
-				693D5E1820298FB300D50FC2 /* Manager.m */,
 			);
 			path = jazzy_lobsters_02;
 			sourceTree = "<group>";
@@ -68,7 +74,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693D5E1920298FB300D50FC2 /* Manager.h in Headers */,
+				6994EA38202AD81700416FB3 /* NSColor+Interpolate.h in Headers */,
+				6994EA39202AD81700416FB3 /* BaseItem.h in Headers */,
 				693D5E0E20298E1300D50FC2 /* jazzy_lobsters_02View.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,8 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6994EA36202AD81700416FB3 /* BaseItem.m in Sources */,
 				693D5E1020298E1300D50FC2 /* jazzy_lobsters_02View.m in Sources */,
-				693D5E1A20298FB300D50FC2 /* Manager.m in Sources */,
+				6994EA37202AD81700416FB3 /* NSColor+Interpolate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

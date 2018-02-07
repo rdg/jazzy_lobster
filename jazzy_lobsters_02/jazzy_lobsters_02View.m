@@ -1,35 +1,81 @@
 //
-//  jazzy_lobsters_02View.m
-//  jazzy_lobsters_02
+//  jazzy_lobster_screensaver_01View.m
+//  jazzy_lobster_screensaver_01
 //
-//  Created by Georg Duemlein on 6/02/18.
+//  Created by Georg Duemlein on 2/02/18.
 //  Copyright © 2018 countasone. All rights reserved.
 //
 
 #import "jazzy_lobsters_02View.h"
-#import "Manager.h"
+#import "BaseItem.h"
+#import "NSColor+Interpolate.h"
 
-@implementation jazzy_lobsters_02View
+@implementation jazzy_lobster_screensaver_01View
+@synthesize items;
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
-        manager = [[Manager alloc] initWithSize:NSSizeToCGSize(frame.size)];
+        
+        NSSize size;
+        size = [self bounds].size;
+        
+        float width;
+        float height;
+        width = size.width / 16;
+        height = size.height / 10;
+        
+        items =  [NSMutableArray arrayWithCapacity:(16 * 10)];
+        for (int row=0; row < 10; row++) {
+            for(int col=0; col < 16; col++) {
+                [items addObject: [BaseItem itemWithLife:SSRandomIntBetween(10, 100) andX:(col * width) andY:(row * height) andWidth:width andHeight:height]];
+            }
+        }
     }
+
     return self;
+}
+
+- (void)startAnimation
+{
+    [super startAnimation];
+}
+
+- (void)stopAnimation
+{
+    [super stopAnimation];
 }
 
 - (void)drawRect:(NSRect)rect
 {
-    [manager drawInContext:(CGContextRef)[[NSGraphicsContext currentContext] graphicsPort]];
+    [super drawRect:rect];
 }
 
 - (void)animateOneFrame
 {
-    [manager animateOneFrame];
-    [self setNeedsDisplay:YES];
+//                BaseItem *item = items[1];
+//                [item step];
+//                [item draw];
+    for (int row=0; row < 10; row++) {
+        for(int col=0; col < 16; col++) {
+            BaseItem *item = items[row * 16 + col];
+            [item step];
+            [item draw];
+        }
+    }
+}
+
+
+- (BOOL)hasConfigureSheet
+{
+    return NO;
+}
+
+- (NSWindow*)configureSheet
+{
+    return nil;
 }
 
 @end
