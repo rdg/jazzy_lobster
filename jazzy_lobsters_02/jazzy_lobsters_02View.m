@@ -11,7 +11,6 @@
 #import "NSColor+Interpolate.h"
 
 @implementation jazzy_lobster_screensaver_01View
-@synthesize items;
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
@@ -27,10 +26,10 @@
         width = size.width / 16;
         height = size.height / 10;
         
-        items =  [NSMutableArray arrayWithCapacity:(16 * 10)];
+        self.items =  [NSMutableArray arrayWithCapacity:(16 * 10)];
         for (int row=0; row < 10; row++) {
             for(int col=0; col < 16; col++) {
-                [items addObject: [BaseItem itemWithLife:SSRandomIntBetween(10, 100) andX:(col * width) andY:(row * height) andWidth:width andHeight:height]];
+                [self.items addObject: [BaseItem itemWithLife:SSRandomIntBetween(10, 100) andX:(col * width) andY:(row * height) andWidth:width andHeight:height]];
             }
         }
     }
@@ -55,12 +54,9 @@
 
 - (void)animateOneFrame
 {
-//                BaseItem *item = items[1];
-//                [item step];
-//                [item draw];
     for (int row=0; row < 10; row++) {
         for(int col=0; col < 16; col++) {
-            BaseItem *item = items[row * 16 + col];
+            BaseItem *item = self.items[row * 16 + col];
             [item step];
             [item draw];
         }
