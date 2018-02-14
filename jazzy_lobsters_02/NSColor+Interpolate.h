@@ -10,4 +10,5 @@
 
 @interface NSColor (Interpolate)
 +(NSColor *)interpolateRGBColorFrom:(NSColor *)start to:(NSColor *)end withFraction:(float)f;
++(NSColor *)interpolateHSVColorFrom:(NSColor *)start to:(NSColor *)end withFraction:(float)f;
 @end

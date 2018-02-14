@@ -14,7 +14,9 @@
     CGSize boundsSize;
     CGLayerRef layer;
 }
+@property (nonatomic, retain) NSMutableArray *colors;
 @property (nonatomic, retain) NSColor *color;
+@property (assign) int colorId;
 @property (nonatomic, retain) NSColor *background;
 @property (assign) float life;
 @property (assign) float age;

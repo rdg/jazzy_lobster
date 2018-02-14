@@ -26,4 +26,22 @@
     
     return [NSColor colorWithRed:r green:g blue:b alpha:a];
 }
++ (NSColor *)interpolateHSVColorFrom:(NSColor*)start to:(NSColor *)end withFraction:(float)f {
+    
+    f = MAX(0, f);
+    f = MIN(1, f);
+    
+    CGFloat h1,s1,v1,a1;
+    [start getHue:&h1 saturation:&s1 brightness:&v1 alpha:&a1];
+    
+    CGFloat h2,s2,v2,a2;
+    [end getHue:&h2 saturation:&s2 brightness:&v2 alpha:&a2];
+    
+    CGFloat h = h1 + (h2 - h1) * f;
+    CGFloat s = s1 + (s2 - s1) * f;
+    CGFloat v = v1 + (v2 - v1) * f;
+    CGFloat a = a1 + (a2 - a1) * f;
+    
+    return [NSColor colorWithHue:0.0 saturation:1.0 brightness:1.0 alpha:1.0];
+}
 @end
